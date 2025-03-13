@@ -9,10 +9,10 @@ function oM = generateCylinder2(r, h, N)
 
   p = zeros(num_triangles*2 + 2, 3);
 
-  p(1,:) = [ l/2, y_coord, 0 ];
-  p(2,:) = [ -l/2, y_coord, 0 ];
-  p(end-1,:) = [ l/2, y_coord, h ];
-  p(end,:) = [ -l/2, y_coord, h ];
+  p(1,:) = [ l/2, y_coord, -h/2 ];
+  p(2,:) = [ -l/2, y_coord, -h/2 ];
+  p(end-1,:) = [ l/2, y_coord, h/2 ];
+  p(end,:) = [ -l/2, y_coord, h/2 ];
   
   j = 0;
   for i = 3 : size(p,1)-2
@@ -22,7 +22,7 @@ function oM = generateCylinder2(r, h, N)
       x = l/2;
       j = j + 1;
     end
-    p(i,:) = [ x, y_coord, h_1 * j ];
+    p(i,:) = [ x, y_coord, -h/2 + h_1 * j ];
   end
 
   first_c = zeros(num_triangles*2,3);
