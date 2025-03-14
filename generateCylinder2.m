@@ -34,15 +34,9 @@ function oM = generateCylinder2(r, h, N)
     end
   end
 
-  % m = triangulation(first_c,p);
-  % trisurf(m)
-  % daspect([1,1,1])
-
   num_triangles_per_slice = num_triangles * 2;
   num_points_per_slice = num_triangles*2 + 2;
   
-
-
   all_p = zeros( N * num_points_per_slice , 3);
   all_p( 1 : size(p,1), : ) = p;
   c = zeros( N * num_triangles_per_slice, 3);
@@ -76,8 +70,4 @@ function oM = generateCylinder2(r, h, N)
   end
   
   oM = triangulation(c, all_p);
-
-  % figure
-  % trisurf(oM)
-  % daspect([1,1,1])
 end
