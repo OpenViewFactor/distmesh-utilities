@@ -38,7 +38,7 @@ connectivity = zeros(num_triangles,3);
 
 for i = 1 : N
 
-  connectivity(2*(i)-1,:) = [ i , num_outer_points + i , i + 1 ];
+  connectivity(2*(i)-1,:) = [ num_outer_points + i , i , i + 1 ];
   if i < N
     second_index = num_outer_points + i + 1;
   else
