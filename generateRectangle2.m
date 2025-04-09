@@ -26,13 +26,13 @@ end
 
 oM = translateMesh(oM , [strip_base/2 , short_edge/2 , 0]);
 
-trisurf(oM , 'EdgeColor' , 'k' , 'LineWidth' , 0.2 , 'FaceColor' , 'k' , 'FaceAlpha', 0.5)
-hold on
-view(2)
-daspect([1,1,1])
-pbaspect([1,1,1])
-grid off
-axis off
-hold off
+% trisurf(oM , 'EdgeColor' , 'k' , 'LineWidth' , 0.2 , 'FaceColor' , 'k' , 'FaceAlpha', 0.5)
+% hold on
+% view(2)
+% daspect([1,1,1])
+% pbaspect([1,1,1])
+% grid off
+% axis off
+% hold off
 
 end
