@@ -16,15 +16,16 @@ iM = translateMesh(iM , [-strip_base/2 , -short_edge/2 , 0]);
 
 oM = iM;
 
-for i = 1 : N
+for i = 1 : N - 1
 
   iM = triangulation( iM.ConnectivityList , [-1,1,1] .* iM.Points );
+  iM = flipNormals(iM);
   iM2 = translateMesh( iM , [i*strip_base,0,0] );
   oM = combineTriangulations(oM, iM2);
 
 end
 
-oM = translateMesh(oM , [strip_base/2 , short_edge/2 , 0]);
+oM = flipNormals(translateMesh(oM , [strip_base/2 , short_edge/2 , 0]));
 
 % trisurf(oM , 'EdgeColor' , 'k' , 'LineWidth' , 0.2 , 'FaceColor' , 'k' , 'FaceAlpha', 0.5)
 % hold on
